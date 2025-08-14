@@ -7,6 +7,7 @@ Objetivo: Aplicar o conhecimento de variáveis e operadores em um problema prát
 3. Calcule a área do retângulo (Área = Altura * Largura).
 4. Exiba o resultado de forma clara, indicando as unidades.'''
 
+print('')
 altura = float(input('Digite a altura do retângulo (em metros): '))
 largura = float(input('Digite a largura do retângulo (em metros): '))
 area = altura * largura

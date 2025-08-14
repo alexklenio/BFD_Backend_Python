@@ -15,3 +15,4 @@ area = altura * largura
 print('')
 print(f'A área do retângulo é de {area} metros quadrados.')
 print('')
+

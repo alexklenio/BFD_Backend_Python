@@ -1,2 +1,2 @@
 # BFD_Backend_Python
-Repospitório para ocurso de Backend com Python do programa Bolsa Futuro Digital
+Repospitório para o curso de Backend em Python, do programa Bolsa Futuro Digital

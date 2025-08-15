@@ -13,4 +13,3 @@ if nome == "Alex" and senha == 1234:
 else:
     print(f'\n{Fore.RED}ACESSO NEGADO, tente novamente')
     print('')
-    

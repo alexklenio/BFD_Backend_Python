@@ -5,7 +5,7 @@ pedido = 0
 
 opcao = -1
 
-while opcao != 0:
+while True:
 
     opcao = int(input(
             '''
@@ -58,10 +58,11 @@ while opcao != 0:
             print('Quantidade inválida, por favor, tente novamente.\n')
 
     elif opcao == 0:
-        
+       
         print(f'\nPedido finalizado. O valor total a pagar é R$ {pedido:.2f}')
 
         print('\nObrigado por utilizar os nossos serviços e tenha um bom apetite!')
+        break
         
     else:
        

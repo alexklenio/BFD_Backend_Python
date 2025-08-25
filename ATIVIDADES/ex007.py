@@ -1,3 +1,5 @@
+import textwrap
+
 hamburguer = 25
 batata = 15
 refrigerante = 8

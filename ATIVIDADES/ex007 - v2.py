@@ -1,8 +1,3 @@
-import textwrap
-
-pedidos = []
-total = 0
-total_itens = 0
 
 CARDAPIO = {
     1:  ('Hamburguer', 15),
@@ -19,11 +14,12 @@ def menu():
     for codigo, (item, preco) in CARDAPIO.items():
         print(f'{codigo} - {item} - R${preco:.2f}')
 
+def realizar_pedidos():
 
-    while True:
-        print()
-        menu()
-        print()
+    pedidos = []
+
+    while True:    
+    
         codigo = int(input('Informe o código do produto que você deseja => '))
 
         if codigo == 0:
@@ -37,36 +33,39 @@ def menu():
 
             pedidos.append((quantidade, item, preco))
             print(f'\nProduto Adicionado: {quantidade} x {item} - R${quantidade * preco:.2f}')
-       
+
         else:
             print('Opção inválida')
 
+    return pedidos
  
-       
+def exibir_conta(pedidos):
 
-if pedidos:
-    print('\n-=-=-=-=- Seu pedido -=-=-=-=-=-=-=-=')
+    total = 0
+    total_itens = 0
 
-    for quantidade,item,preco in pedidos:
-        subtotal = quantidade * preco
-        print(f'- {quantidade} x {item} - R${subtotal:.2f}')
-        total += subtotal
-        total_itens += quantidade
+    if pedidos:
+        print('\n-=-=-=-=- Seu pedido -=-=-=-=-=-=-=-=')
 
-    print('-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-')
-    print(f'\nTotal de itens: {total_itens}')
-    print(f'Total a pagar: R${total:.2f}')
+        for quantidade,item,preco in pedidos:
+            subtotal = quantidade * preco
+            print(f'- {quantidade} x {item} - R${subtotal:.2f}')
+            total += subtotal
+            total_itens += quantidade
 
-else:
-    print('\nNenhum item selecionado.')
-   
+        print('-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-')
+        print(f'\nTotal de itens: {total_itens}')
+        print(f'Total a pagar: R${total:.2f}')
+
+    else:
+        print('\nNenhum item selecionado.')  
+
+def programa():
+
+    menu()
+    lista_de_pedidos = realizar_pedidos()
+    exibir_conta(lista_de_pedidos)
 
 
-print()
 
-
-
-
-
-
-
+programa()

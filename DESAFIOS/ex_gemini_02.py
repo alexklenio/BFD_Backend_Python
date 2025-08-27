@@ -23,8 +23,7 @@ def adivinhe():
             
         else:
             print(f'\nParabéns, você acertou em {c} tentativas!')
-            break 
-        
+            break       
         
 adivinhe()
     

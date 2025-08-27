@@ -10,7 +10,7 @@ def adivinhe():
         
         user = int(input('\nAdivinhe qual número eu pensei: '))
 
-        if  0 > user > 10:
+        if  user == 0 or user > 10:
             print('Número inválido, digite número entre 1 e 10')
         
         elif user < comp:
@@ -22,7 +22,7 @@ def adivinhe():
             c += 1
             
         else:
-            print(f'\nParabéns, você acertou em {c} tentativas!')
+            print(f'\nParabéns, você acertou em {c} tentativas!\n')
             break       
         
 adivinhe()

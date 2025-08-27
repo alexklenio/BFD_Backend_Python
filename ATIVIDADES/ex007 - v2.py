@@ -14,6 +14,7 @@ def menu():
     for codigo, (item, preco) in CARDAPIO.items():
         print(f'{codigo} - {item} - R${preco:.2f}')
 
+
 def realizar_pedidos():
 
     pedidos = []
@@ -39,6 +40,7 @@ def realizar_pedidos():
 
     return pedidos
  
+
 def exibir_conta(pedidos):
 
     total = 0
@@ -60,12 +62,12 @@ def exibir_conta(pedidos):
     else:
         print('\nNenhum item selecionado.')  
 
+
 def programa():
 
     menu()
     lista_de_pedidos = realizar_pedidos()
     exibir_conta(lista_de_pedidos)
-
 
 
 programa()

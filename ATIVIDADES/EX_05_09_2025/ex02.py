@@ -25,7 +25,7 @@ while genero not in ["F", "M", "O"]:
 
 while emprego not in ["E","D","A"]:
     emprego = str(input("""
-    Vínculo impregatício:
+    Vínculo empregatício:
 
     [ E ] Empregado
     [ D ] Desempregado

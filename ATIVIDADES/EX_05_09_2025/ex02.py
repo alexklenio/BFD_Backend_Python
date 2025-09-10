@@ -38,6 +38,6 @@ print(f"""
 Nome: {nome}
 Idade: {idade}
 salário: {salario}
-Genero: {genero}
+Genero: {genero} 
 Vínculo empregatício: {emprego}
 """)

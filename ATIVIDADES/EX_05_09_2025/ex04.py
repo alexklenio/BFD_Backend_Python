@@ -5,7 +5,7 @@ cres_a = 1.035
 cres_b = 1.012
 
 
-while pop_a <= pop_b: #CONDIÇÃO É A POPIULAÇÃO DE A SER MAIOR OU IGUAL A DE B
+while pop_a <= pop_b: #CONDIÇÃO É A POPULAÇÃO DE A SER MAIOR OU IGUAL A DE B
 
     pop_a *= cres_a
     pop_b *= cres_b

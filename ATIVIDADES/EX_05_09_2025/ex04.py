@@ -1,9 +1,10 @@
 pop_a = 90000
-pop_b = 250000
-ano = 0
 cres_a = 1.035
+
+pop_b = 250000
 cres_b = 1.012
 
+ano = 0
 
 while pop_a <= pop_b: #CONDIÇÃO É A POPULAÇÃO DE A SER MAIOR OU IGUAL A DE B
 

@@ -24,7 +24,7 @@ match votacao:
 
 print()
 print("-=" * 19)
-print("SISTEMA DE VOTAÇÃO ENCERRADO!")
+print({"SISTEMA DE VOTAÇÃO ENCERRADO!"})
 
 
    

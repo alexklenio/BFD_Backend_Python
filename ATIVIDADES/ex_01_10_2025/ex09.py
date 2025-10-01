@@ -1,0 +1,15 @@
+
+def contar_vogais(txt):
+    contador = 0
+
+    vogais = ('aeiouáéíóúàèìòùâêîôûãõäëïöü')
+    for v in txt:
+        if v in vogais:
+            contador +=1
+
+    return contador
+
+txt = str(input('Escreva uma palavra ou frase a ser analisada: ')).lower()
+numero_vogais = contar_vogais(txt)
+
+print(f'A streing "{txt}" possui {numero_vogais} vogais.')

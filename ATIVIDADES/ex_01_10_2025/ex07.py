@@ -6,9 +6,12 @@ def increment():
 
 
 increment()
+print(cont)
 increment()
+print(cont)
 increment()
+print(cont)
 increment()
+print(cont)
 increment()
-
 print(cont)

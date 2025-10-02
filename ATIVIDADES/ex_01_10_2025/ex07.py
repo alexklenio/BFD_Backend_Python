@@ -2,7 +2,7 @@ cont = 0
 
 def increment():
     global cont
-    cont += 3
+    cont += 1
 
 
 increment()

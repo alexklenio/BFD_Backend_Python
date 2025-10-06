@@ -1,12 +1,16 @@
 class Mamifero:
     
-    def __init__(self,  nome, raca, cor_pelo):
+    def __init__(self,  nome, raca, dieta):
         self.nome = nome
-        self.cor_pelo = cor_pelo
         self.raca = raca
+        self.dieta = dieta
+
 
     def comer(self):
         print(f'{self.nome} está comendo.')
+
+    def dormir(self):
+        print(f'{self.nome} está dormindo.')
 
     def correr(self):
         print(f'{self.nome} está correndo!')
@@ -14,18 +18,20 @@ class Mamifero:
 
 class Cachorro(Mamifero):
 
-    def __init__(self, nome, raca, cor_pelo, tamanho_do_pelo):
-       super().__init__(nome, cor_pelo, raca)
+    def __init__(self, nome, raca, dieta, cor_pelo, tamanho_do_pelo):
+       super().__init__(nome, raca, dieta)
+       self.cor_pelo = cor_pelo
        self.tamanho_do_pelo = tamanho_do_pelo
+
 
     def latir(self):
         print(f'{self.nome} está latindo')
 
 
-meu_cachorro=Cachorro('Rex', 'Vira-lata','Caramelo', 'baixo')
+dog=Cachorro('Rex', 'Vira-lata','Onívoro','Caramelo','baixo')
 
-print(f'O nome do meu cachorro é {meu_cachorro.nome}, de cor {meu_cachorro.cor_pelo}, é da raça {meu_cachorro.raca} e o seu pelo é {meu_cachorro.tamanho_do_pelo}\n')
+print(f'O nome do meu cachorro é {dog.nome}, de cor {dog.cor_pelo}, é da raça {dog.raca} e o seu pelo é {dog.tamanho_do_pelo}\n')
 
-meu_cachorro.comer()
-meu_cachorro.correr()
-meu_cachorro.latir()
+dog.comer()
+dog.correr()
+dog.latir()

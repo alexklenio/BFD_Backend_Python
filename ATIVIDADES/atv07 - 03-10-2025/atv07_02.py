@@ -1,4 +1,4 @@
-class Animal:
+class Mamifero:
     
     def __init__(self,  nome, raca, cor_pelo):
         self.nome = nome
@@ -6,13 +6,13 @@ class Animal:
         self.raca = raca
 
     def comer(self):
-        print(f'{self.nome} está comendo, cuidado!')
+        print(f'{self.nome} está comendo.')
 
     def correr(self):
         print(f'{self.nome} está correndo!')
 
 
-class Cachorro(Animal):
+class Cachorro(Mamifero):
 
     def __init__(self, nome, raca, cor_pelo, tamanho_do_pelo):
        super().__init__(nome, cor_pelo, raca)

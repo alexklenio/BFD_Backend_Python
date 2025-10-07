@@ -28,7 +28,7 @@ class Cachorro(Mamifero):
         print(f'{self.nome} está latindo')
 
 
-dog=Cachorro('Rex', 'Vira-lata','Onívoro','Caramelo','baixo')
+dog= Cachorro('Rex', 'Vira-lata','Onívoro','Caramelo','baixo')
 
 print(f'O nome do meu cachorro é {dog.nome}, de cor {dog.cor_pelo}, é da raça {dog.raca} e o seu pelo é {dog.tamanho_do_pelo}\n')
 

@@ -22,7 +22,6 @@ class Cachorro(Mamifero):
        self.cor_pelo = cor_pelo
        self.tamanho_do_pelo = tamanho_do_pelo
        
-
     def latir(self):
         print(f'{self.nome} está latindo')
 

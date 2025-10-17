@@ -22,14 +22,15 @@ class Cachorro(Mamifero):
        self.cor_pelo = cor_pelo
        self.tamanho_do_pelo = tamanho_do_pelo
        
+       
     def latir(self):
         print(f'{self.nome} está latindo')
+
 
 class Morcego(Mamifero):
     def __init__(self, nome, raca, dieta):
         super().__init__(nome, raca, dieta)
 
-   
 
 dog= Cachorro('Rex', 'Vira-lata','Onívoro','Caramelo','baixo')
 dog2 = Cachorro('João', 'Poodle', 'Onívoro', 'Malhado', 'Alto')
@@ -43,3 +44,5 @@ dog.dormir()
 dog2.correr()
 dog.latir()
 dog2.latir()
+
+bat.dormir()

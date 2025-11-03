@@ -26,7 +26,6 @@ class Tipo:
     def tipo_ingresso(tipo: str):
         tipo = tipo.lower()
 
-
         if tipo == "inteira":
             return IngressoInteira()
         elif tipo == "meia":

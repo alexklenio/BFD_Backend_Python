@@ -20,10 +20,12 @@ class IngressoMeia(Ingresso):
     def calcular_preco(self):
         return 35.00 / 2
 
+    
 class Tipo:
     @staticmethod
     def tipo_ingresso(tipo: str):
         tipo = tipo.lower()
+
 
         if tipo == "inteira":
             return IngressoInteira()

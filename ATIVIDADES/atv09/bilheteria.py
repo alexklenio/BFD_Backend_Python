@@ -1,33 +1,53 @@
-from atv09.ingresso import Ingresso, IngressoInteira, IngressoMeia
+from abc import ABC, abstractmethod
+
+
+class Ingresso(ABC):
+
+    @abstractmethod
+    def calcular_preco(self):
+        pass
+
+    def get_detalhes(self):
+        return f"Tipo: {self.__class__.__name__} | Preço: R${self.calcular_preco():.2f}"
+
+
+class IngressoInteira(Ingresso):
+
+    def calcular_preco(self):
+        return 35.00
+
+
+class IngressoMeia(Ingresso):
+
+    def calcular_preco(self):
+        return 35.00 / 2
+
+
+class Tipo:
+    @staticmethod
+    def tipo_ingresso(tipo: str):
+        tipo = tipo.lower()
+
+        if tipo == "inteira":
+            return IngressoInteira()
+
+        elif tipo == "meia":
+            return IngressoMeia()
+
+        else:
+             raise ValueError(f"Tipo de ingresso '{tipo}' desconhecido. Somente 'inteira' ou 'meia' são permitidos.")
+
+
 
 class Bilheteria:
-    """O Criador que contém o Factory Method."""
 
-    def criar_ingresso(self, tipo: str) -> Ingresso:
-        """
-        FACTORY METHOD: Cria o objeto Ingresso específico com base no tipo.
-        É aqui que a lógica de criação é encapsulada (o if/else).
-        """
-        tipo = tipo.lower() # Garante que a comparação não seja sensível a maiúsculas/minúsculas
+    def criar_ingresso(self, tipo: str):
 
-        if tipo == 'inteira':
-            return IngressoInteira()
-        elif tipo == 'meia':
-            return IngressoMeia()
-        else:
-            raise ValueError(f"Tipo de ingresso '{tipo}' desconhecido. Somente 'inteira' ou 'meia' são permitidos.")
+        ingresso = Tipo.tipo_ingresso(tipo)
 
-    def vender_ingresso(self, tipo: str):
-        """
-        Um método de operação da Bilheteria que USA o Factory Method.
-        O código deste método não precisa saber os nomes das classes concretas.
-        """
-        print(f"** Processando venda de ingresso tipo '{tipo}'... **")
-        
-        # O Criador chama o Factory Method para obter o objeto
-        ingresso = self.criar_ingresso(tipo)
-
-        # E então usa o objeto criado
+        print(f"Processando a venda de ingresso tipo '{tipo}'")
         print(f"✅ Ingresso criado: {ingresso.get_detalhes()}")
-        print("---------------------------------------------")
-        return ingresso
+
+
+sao_luiz = Bilheteria()
+sao_luiz.criar_ingresso("meia")

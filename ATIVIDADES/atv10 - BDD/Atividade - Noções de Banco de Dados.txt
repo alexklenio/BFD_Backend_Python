@@ -1,0 +1,257 @@
+Atividade - Noções de Banco de Dados :)
+Da análise do minimundo à representação relacional
+
+1. Em um modelo relacional, uma chave primária deve:
+c. Identificar unicamente cada linha de uma tabela.
+
+2. No processo de modelagem de dados, a etapa de análise de requisitos é fundamental porque:
+b. Permite compreender o que o banco precisa representar e as regras do negócio.
+
+3. Um Sistema de Gerenciamento de Banco de Dados (SGBD) NÃO é responsável por:
+d. Decidir sozinho o modelo conceitual do banco.
+
+4. Em um diagrama ER, uma entidade “Aluno” tem atributos (matrícula, nome, e-mail, data_nascimento). Se considerarmos matrícula como chave primária, o que aconteceria se dois alunos tivessem a mesma matrícula?
+b. O sistema apresentaria erro, pois a chave primária deve ser única.
+
+
+5. Leia o trecho abaixo:
+
+“Uma empresa deseja registrar seus funcionários, departamentos e projetos. Cada funcionário trabalha em um único departamento, mas pode
+participar de vários projetos. Cada projeto pode envolver vários funcionários.” Com base nisso identifique as entidades e seus principais atributos.
+
+Funcionário:
+- Nome
+- Sobrenome
+- CPF / Matrículo
+- Salário
+- Sara de contratação
+
+Departamento:
+- ID do departamento
+- Nome
+- Localização
+- Telefone
+
+Projeto:
+- ID do Projeto
+- Nome
+- Data de início
+- Previsão para final
+- Orçamento
+
+Relacionamentos:
+
+Funcionário  -> Departamento (1 : 1)
+- "Cada funcionário trabalha em um único departamento."
+
+Funcionário <-> Projeto (N : M)
+
+- Funcionário pode participar de vários projetos.
+- Cada projeto pode envolver vários funcionários.
+
+
+6. A partir das tabelas abaixo, identifique qual delas são as chaves primárias.
+
+a. Cliente (id_cliente, nome, cpf, telefone)
+b. Pedido (id_pedido, data, id_cliente)
+Explique por que é uma chave primária e qual relação ela cria entre as tabelas.
+
+id_cliente -> Ela identifica cada cliente de forma individual, o qual pode ter muitos pedidos
+id_pedido -> Identifica um pedido também de forma individual, o qual possui um id cliente, onde um pedido so pode ser de um cliente, mas um cliente pode ter muitos pedidos.
+
+7. Imagine que você está participando da análise de requisitos de um sistema de reservas de hotel.
+
+Liste 8 requisitos funcionais e 5 não funcionais que seriam importantes para esse sistema.
+
+Funcionais:
+- Registro e Login de usuários
+- Busca de disponibilidade
+- Realização de reserva
+- Processamento de Pagamento
+- Cancelamento / alteração de Reserva
+
+Não funcionais:
+- Desempenho
+- Segurança
+- Usabilidade
+- Usabilidade
+- Escalabilidade
+
+8. Em uma tabela de produtos, o campo “código_produto” foi definido como chave primária. O que isso implica no banco de dados?
+a. Nenhum produto poderá ter o mesmo código.
+
+9. A principal diferença entre um modelo conceitual e um modelo lógico (relacional) é:
+b. O modelo conceitual descreve a realidade do negócio; o lógico traduz isso para tabelas.
+
+
+10.Quando um analista cria o diagrama de banco de dados, ele está atuando principalmente na fase de:
+c. Modelagem conceitual
+
+11. No contexto de SGBDs, qual alternativa melhor representa uma vantagem do uso de um sistema gerenciador?
+c. Garante maior integridade, segurança e consistência das informações.
+
+12.Analise o cenário:
+“Uma loja deseja registrar seus clientes, vendas e produtos. Cada venda pode conter vários produtos, e cada cliente pode realizar múltiplas vendas.”
+Liste as entidades e seus atributos principais.
+
+Cliente:
+- ID
+- Nome
+- Email
+- Endereço
+
+Produto:
+- ID
+- Nome
+- Preço
+
+Pedido:
+- ID
+- Valor
+- Data da venda
+- ID do cliente
+
+13.A partir do modelo conceitual simplificado abaixo, escreva a representação relacional (modelo relacional) e indique quais são as chaves primárias:
+
+PACIENTE (id_paciente, nome, telefone)
+CONSULTA (id_consulta, data, id_paciente)
+MÉDICO (id_medico, nome, especialidade)
+CONSULTA é realizada por MÉDICO
+
+
+    PACIENTE
+        id_paciente (chave primária)
+        nome
+        telefone
+
+    MÉDICO
+        id_medico (chave primária)
+        nome
+        especialidade
+
+    CONSULTA
+        id_consulta (chave primária)
+        data
+        id_paciente (chave estrangeira)
+        id_medico (chave estrangeira)
+
+
+14.Imagine que você foi contratado para participar da análise de requisitos de um sistema de rede social.
+
+a. Liste 2 requisitos funcionais.
+b. Liste 2 requisitos não funcionais.
+c. Dê um exemplo de entidade e atributos que fariam parte desse sistema.
+
+Funcionais:
+- Publicar Conteúdo
+- Realizar Conexões
+
+Não Funcionais:
+- Desempenho
+- Segurança
+
+Usuário:
+- ID_Usuario (Chave Primária)
+- Nome_Completo
+- Usuario (único)
+- Email
+- Data_de_Nascimento
+- Data_de_Registro
+- Senha (criptografada)
+
+15.Explique, com suas palavras:
+a. Por que uma boa modelagem de dados facilita a implementação e manutenção do banco de dados.
+
+Uma boa modelagem atua como o projeto arquitetônico do banco de dados, o que é crucial.
+
+Implementação: Facilita ao fornecer um guia claro para desenvolvedores, definindo entidades e regras (chaves primárias/estrangeiras) antes da codificação.
+
+Manutenção: Garante que os dados sejam consistentes e menos redundantes (via Normalização), simplificando futuras atualizações.
+
+Extensibilidade: Permite que novos recursos sejam adicionados facilmente, pois a estrutura lógica do sistema é clara e documentada.
+
+Performance: Otimiza a estrutura para consultas mais eficientes e rápidas, melhorando o desempenho a longo prazo.
+
+Custo: Resolver problemas no modelo conceitual é mais rápido e barato do que corrigir erros no código implementado.
+
+b. Como um SGBD ajuda a evitar erros humanos e problemas de redundância.
+Um Sistema de Gerenciamento de Banco de Dados (SGBD) ajuda a evitar erros humanos e problemas de redundância ao impor regras de forma centralizada, tirando a responsabilidade de manter a coerência das aplicações ou dos usuários.
+
+16.Assinale a alternativa correta sobre as chaves primárias em bancos de dados relacionais.
+a. A chave primária é uma combinação única de valores que identifica cada registro (linha) de uma tabela.
+
+17.Durante a análise de um sistema de vendas, o analista percebeu que cada produto precisa de informações como código, nome, preço e quantidade em
+estoque. Nessa descrição, podemos dizer que:
+b. “Produto” é uma entidade e os demais são atributos.
+
+18.Durante a análise de requisitos, o analista deve:
+
+b. Levantar e entender o que o sistema deve armazenar e como deve
+funcionar.
+
+
+19.Situação-problema:
+Uma pequena loja de roupas deseja organizar suas informações em um banco de dados. Atualmente, eles controlam tudo em planilhas e querem registrar: os
+clientes que compram, os produtos vendidos e as vendas realizadas.
+
+● Cada cliente tem um código único, nome, telefone e endereço.
+● Cada produto tem um código único, nome e preço.
+● Cada venda possui um número identificador, a data da venda e o código
+do cliente que realizou a compra.
+Tarefa:
+
+1. Liste as entidades que farão parte do banco de dados.
+
+As entidades (os objetos de interesse para a loja) são:
+
+- CLIENTE
+- PRODUTO
+- VENDA
+
+2. Defina os atributos de cada entidade (indicando a chave primária).
+
+CLIENTE
+- Código (CP)
+- Nome
+- Telefone
+- Endereço
+
+PRODUTO
+- Código (CP)
+- Nome
+- Produtp
+
+VENDA
+- Número (CP)
+- Data
+- Código do cliente
+
+3. Monte a representação relacional (tabelas em formato de texto).
+
+CLIENTE (
+    Código CP,
+    Nome,
+    Telefone,
+    Endereço
+)
+
+PRODUTO (
+    Código CP,
+    Nome,
+    Preço
+)
+
+VENDA (
+    Número CP,
+    Data,
+    Código_Cliente CE (referencia CLIENTE)
+)
+
+ITEM_VENDA (
+    Num_Venda CP, CE (referencia VENDA),
+    Cod_Produto CP, CE (referencia PRODUTO),
+    Quantidade,
+    Preço_Unitario_Venda
+)
+
+

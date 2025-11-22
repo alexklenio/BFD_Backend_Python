@@ -9,5 +9,4 @@ class Bilheteria:
 
 
 sao_luiz = Bilheteria()
-sao_luiz.criar_ingresso("inteira")
-sao_luiz.criar_ingresso("meia")
+sao_luiz.criar_ingresso("estudante")
